@@ -12,12 +12,12 @@
 
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input class="form-control" type="text" name="nome" id="nome">
+                <input class="form-control" type="text" name="nome" [(ngModel)]="produto.nome">
             </div>
 
             <div class="form-group">
                 <label for="">Categoria:</label>
-                <select class="form-control" name="categoria" id="categoria">
+                <select class="form-control" name="categoria" [(ngModel)]="produto.categoria">
                     <option value="action">Ação</option>
                     <option value="adventure">Aventura</option>
                     <option value="horror">Terror</option>
@@ -27,17 +27,17 @@
 
             <div class="form-group">
                 <label for="preco">Preço:</label>
-                <input class="form-control" type="text" name="preco" id="preco">
+                <input class="form-control" type="text" name="preco" [(ngModel)]="produto.preco">
             </div>
 
             <div class="form-group">
                 <label for="preco">Quantidade:</label>
-                <input class="form-control" type="text" name="quantidade" id="quantidade">
+                <input class="form-control" type="text" name="quantidade" [(ngModel)]="produto.quantidade">
             </div>
 
             <div class="form-group">
                 <label for="preco">Desenvolvedor:</label>
-                <input class="form-control" type="text" name="desenvolvedor" id="desenvolvedor">
+                <input class="form-control" type="text" name="desenvolvedor" [(ngModel)]="produto.desenvolvedor">
             </div>
 
         </div>
@@ -45,14 +45,20 @@
         <div class="col-12 col-md-6">
             <div class="form-group">
                 <label for="desc">Descrição do Produto:</label>
-                <textarea class="form-control" name="desc" id="desc" rows="3"></textarea>
+                <textarea class="form-control" name="desc" [(ngModel)]="produto.desc" rows="3"></textarea>
             </div>
         
             <div class="custom-file">
                 <input type="file" class="custom-file-input" id="customFile">
                 <label class="custom-file-label" for="customFile">Escolha uma Foto</label>
             </div>
-        </div>
 
+            <div class="form-group">
+                {{produto.nome}}
+                {{produto.desc}}
+            </div>
+    
+
+        </div>
     </form>
 </section>
