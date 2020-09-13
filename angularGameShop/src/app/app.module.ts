@@ -10,6 +10,8 @@ import { PageFooterComponent } from './view/page-footer/page-footer.component';
 import { PageHomeComponent } from './view/page-home/page-home.component';
 import { UsuarioFormComponent } from './view/usuario-form/usuario-form.component';
 import { UsuarioPerfilComponent } from './view/usuario-perfil/usuario-perfil.component';
+import { ProdutoFormComponent } from './view/produto-form/produto-form.component';
+import { ProdutoPerfilComponent } from './view/produto-perfil/produto-perfil.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { UsuarioPerfilComponent } from './view/usuario-perfil/usuario-perfil.com
     PageFooterComponent,
     PageHomeComponent,
     UsuarioFormComponent,
-    UsuarioPerfilComponent
+    UsuarioPerfilComponent,
+    ProdutoFormComponent,
+    ProdutoPerfilComponent
   ],
   imports: [
     BrowserModule,
