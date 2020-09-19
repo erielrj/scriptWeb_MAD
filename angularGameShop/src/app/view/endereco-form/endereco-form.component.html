@@ -1,0 +1,28 @@
+<p>endereco-form works!</p>
+
+
+<div class="form-group">
+    <label for="">CEP</label>
+    <input class="form-control" type="text" name="cep" [(ngModel)]="cep">
+    <button type="button" (click)="buscaCEP()"> Buscar </button>
+</div>
+
+<div class="form-group">
+    <label for="">Logradouro</label>
+    <input class="form-control" type="text" name="logradouro" [(ngModel)]="endereco.logradouro">
+</div>
+
+<div class="form-group">
+    <label for="">Bairro</label>
+    <input class="form-control" type="text" name="bairro" [(ngModel)]="endereco.bairro">
+</div>
+
+<div class="form-group">
+    <label for="">Cidade</label>
+    <input class="form-control" type="text" name="localidade" [(ngModel)]="endereco.localidade">
+</div>
+
+<div class="form-group">
+    <label for="">UF</label>
+    <input class="form-control" type="text" name="uf" [(ngModel)]="endereco.uf">
+</div>
