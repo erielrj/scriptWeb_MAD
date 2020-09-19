@@ -20,10 +20,10 @@
         <label for="">Categoria*: <span class="text-danger"
             *ngIf="categoria.invalid && (categoria.dirty || categoria.touched)">Obrigatório</span></label>
         <select class="form-control" name="categoria" [(ngModel)]="produto.categoria" #categoria="ngModel" required>
-          <option value="action">Ação</option>
-          <option value="adventure">Aventura</option>
-          <option value="horror">Terror</option>
-          <option value="fps">Tiro em primeira pessoa (FPS)</option>
+          <option value="Action">Ação</option>
+          <option value="Adventure">Aventura</option>
+          <option value="Horror">Terror</option>
+          <option value="FPS">Tiro em primeira pessoa (FPS)</option>
         </select>
       </div>
 
