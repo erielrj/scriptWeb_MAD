@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Produto } from 'src/app/model/produto';
 
 @Component({
@@ -13,6 +14,10 @@ export class ProdutoFormComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(form:FormsModule){
+    console.log(this.produto, form)
   }
 
 }

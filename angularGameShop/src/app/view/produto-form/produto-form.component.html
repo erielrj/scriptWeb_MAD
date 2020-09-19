@@ -1,64 +1,69 @@
 <section class="container">
 
-    <div class="row mb-3">
-        <div class="col-12">
-            <h3>Cadastro produto</h3>
-        </div>
+  <div class="row mb-3">
+    <div class="col-12">
+      <h3>Cadastro produto</h3>
+    </div>
+  </div>
+
+  <form action="" class="row" #fc="ngForm" (ngSubmit)="onSubmit(fc)">
+
+    <div class="col-12 col-md-6">
+
+      <div class="form-group">
+        <label for="nome">Nome*: <span class="text-danger"
+            *ngIf="nome.invalid && (nome.dirty || nome.touched)">Obrigatório</span></label>
+        <input class="form-control" type="text" name="nome" [(ngModel)]="produto.nome" #nome="ngModel" required>
+      </div>
+
+      <div class="form-group">
+        <label for="">Categoria*: <span class="text-danger"
+            *ngIf="categoria.invalid && (categoria.dirty || categoria.touched)">Obrigatório</span></label>
+        <select class="form-control" name="categoria" [(ngModel)]="produto.categoria" #categoria="ngModel" required>
+          <option value="action">Ação</option>
+          <option value="adventure">Aventura</option>
+          <option value="horror">Terror</option>
+          <option value="fps">Tiro em primeira pessoa (FPS)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="preco">Preço*: <span class="text-danger"
+            *ngIf="preco.invalid && (preco.dirty || preco.touched)">Obrigatório</span></label>
+        <input class="form-control" type="text" name="preco" [(ngModel)]="produto.valor" #preco="ngModel" required>
+      </div>
+
+      <div class="form-group">
+        <label for="preco">Quantidade*: <span class="text-danger"
+            *ngIf="quant.invalid && (quant.dirty || quant.touched)">Obrigatório</span></label>
+        <input class="form-control" type="text" name="quantidade" [(ngModel)]="produto.quant" #quant="ngModel" required>
+      </div>
+
+      <div class="form-group">
+        <label for="preco">Desenvolvedor:</label>
+        <input class="form-control" type="text" name="desenvolvedor" [(ngModel)]="produto.desenvolvedor">
+      </div>
+
     </div>
 
-    <form action="" class="row">
+    <div class="col-12 col-md-6">
+      <div class="form-group">
+        <label for="desc">Descrição do Produto:</label>
+        <textarea class="form-control" name="desc" [(ngModel)]="produto.descricao" rows="3"></textarea>
+      </div>
 
-        <div class="col-12 col-md-6">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile">
+        <label class="custom-file-label" for="customFile">Escolha uma Foto</label>
+      </div>
 
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input class="form-control" type="text" name="nome" [(ngModel)]="produto.nome">
-            </div>
 
-            <div class="form-group">
-                <label for="">Categoria:</label>
-                <select class="form-control" name="categoria" [(ngModel)]="produto.categoria">
-                    <option value="action">Ação</option>
-                    <option value="adventure">Aventura</option>
-                    <option value="horror">Terror</option>
-                    <option value="fps">Tiro em primeira pessoa (FPS)</option>
-                </select>
-            </div>
+      <div class="mt-5">
+        <button class="btn btn-primary" type="submit" [disabled]="fc.invalid"> Salvar </button>
+        <button class="btn btn-danger ml-2" type="reset"> Cancelar </button>
+      </div>
 
-            <div class="form-group">
-                <label for="preco">Preço:</label>
-                <input class="form-control" type="text" name="preco" [(ngModel)]="produto.preco">
-            </div>
 
-            <div class="form-group">
-                <label for="preco">Quantidade:</label>
-                <input class="form-control" type="text" name="quantidade" [(ngModel)]="produto.quantidade">
-            </div>
-
-            <div class="form-group">
-                <label for="preco">Desenvolvedor:</label>
-                <input class="form-control" type="text" name="desenvolvedor" [(ngModel)]="produto.desenvolvedor">
-            </div>
-
-        </div>
-
-        <div class="col-12 col-md-6">
-            <div class="form-group">
-                <label for="desc">Descrição do Produto:</label>
-                <textarea class="form-control" name="desc" [(ngModel)]="produto.desc" rows="3"></textarea>
-            </div>
-        
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="customFile">
-                <label class="custom-file-label" for="customFile">Escolha uma Foto</label>
-            </div>
-
-            <div class="form-group">
-                {{produto.nome}}
-                {{produto.desc}}
-            </div>
-    
-
-        </div>
-    </form>
+    </div>
+  </form>
 </section>
