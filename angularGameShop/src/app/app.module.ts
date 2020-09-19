@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrMaskerModule } from 'br-mask';
+import { HttpClientModule } from '@angular/common/http'; //Necesário para importar APIs de requisições simples
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { UsuarioFormComponent } from './view/usuario-form/usuario-form.component
 import { UsuarioPerfilComponent } from './view/usuario-perfil/usuario-perfil.component';
 import { ProdutoFormComponent } from './view/produto-form/produto-form.component';
 import { ProdutoPerfilComponent } from './view/produto-perfil/produto-perfil.component';
+import { EnderecoFormComponent } from './view/endereco-form/endereco-form.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,15 @@ import { ProdutoPerfilComponent } from './view/produto-perfil/produto-perfil.com
     UsuarioFormComponent,
     UsuarioPerfilComponent,
     ProdutoFormComponent,
-    ProdutoPerfilComponent
+    ProdutoPerfilComponent,
+    EnderecoFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrMaskerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
