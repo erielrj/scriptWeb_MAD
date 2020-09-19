@@ -19,6 +19,10 @@ export class UsuarioService {
     return this.http.get<Endereco>(`https://viacep.com.br/ws/${cep}/json/`)
   }
 
+  addEndereco(endereco: Endereco, idUser){
+    return this.http.put(this.localURL+this.colletionUser+"/"+idUser+"/endereco", endereco)
+  }
+
   addUser(usuario: Usuario) {
     return this.http.post<Usuario>(this.localURL + this.colletionUser, usuario)
   }

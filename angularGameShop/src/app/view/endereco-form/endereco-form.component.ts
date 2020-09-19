@@ -8,15 +8,16 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./endereco-form.component.css']
 })
 export class EnderecoFormComponent implements OnInit {
-public endereco:Endereco = new Endereco;
-public cep:string = "";
+  
+  public endereco: Endereco = new Endereco;
+  public cep: string = "";
 
-  constructor(private UsuarioService:UsuarioService) { }
+  constructor(private UsuarioService: UsuarioService) { }
 
   ngOnInit(): void {
   }
 
-  buscaCEP(){
+  buscaCEP() {
     this.UsuarioService.getEndereco(this.cep).subscribe( // validar o retorno
       res => {
         this.endereco = res;
