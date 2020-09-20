@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { BrMaskerModule } from 'br-mask';
 import { HttpClientModule } from '@angular/common/http'; //Necesário para importar APIs de requisições simples
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PageNavComponent } from './view/page-nav/page-nav.component';
@@ -15,6 +16,11 @@ import { UsuarioPerfilComponent } from './view/usuario-perfil/usuario-perfil.com
 import { ProdutoFormComponent } from './view/produto-form/produto-form.component';
 import { ProdutoPerfilComponent } from './view/produto-perfil/produto-perfil.component';
 import { EnderecoFormComponent } from './view/endereco-form/endereco-form.component';
+
+// Firebase -----
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -34,7 +40,9 @@ import { EnderecoFormComponent } from './view/endereco-form/endereco-form.compon
     AppRoutingModule,
     FormsModule,
     BrMaskerModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

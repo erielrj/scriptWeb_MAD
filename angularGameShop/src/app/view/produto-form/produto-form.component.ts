@@ -24,7 +24,7 @@ export class ProdutoFormComponent implements OnInit {
   onSubmit(form:FormsModule){
     console.log(this.produto, form)
 
-    this.ProdutoService.addProduct(this.produto).subscribe(
+    this.ProdutoService.addProduct(this.produto).then(
       (res)=>{
         alert(`Produto: ${this.produto.nome}, cadastrado com sucesso!`);
         this.router.navigate(["perfilProduct", res.id])

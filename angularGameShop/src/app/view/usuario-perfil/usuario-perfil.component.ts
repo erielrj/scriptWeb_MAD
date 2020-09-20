@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Endereco } from 'src/app/model/endereco';
 import { Usuario } from 'src/app/model/usuario';
@@ -11,9 +11,8 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 })
 export class UsuarioPerfilComponent implements OnInit {
 
-  private id: string = null;
+  public id: string = null;
   public usuario: Usuario = new Usuario;
-  @Input() public address: Endereco;
 
   constructor(
     private activatedRouter: ActivatedRoute,
@@ -32,8 +31,8 @@ export class UsuarioPerfilComponent implements OnInit {
     }
   }
 
-  pegaEndereco(){
-    console.log(this.address);
+  recebeEndereco(event){
+    console.log("Endereco recebido:\n", event);
   }
 
 }

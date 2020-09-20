@@ -23,6 +23,15 @@
       "tel": "(21) 55555-55555",
       "pws": "123123",
       "id": 3
+    },
+    {
+      "ativo": true,
+      "endereco": [],
+      "nome": "Maria",
+      "email": "maria@email.com",
+      "tel": "(21) 55555-55555",
+      "pws": "123123",
+      "id": 4
     }
   ],
   "produto": [

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Endereco } from 'src/app/model/endereco';
 import { UsuarioService } from 'src/app/services/usuario.service';
 
@@ -8,11 +8,18 @@ import { UsuarioService } from 'src/app/services/usuario.service';
   styleUrls: ['./endereco-form.component.css']
 })
 export class EnderecoFormComponent implements OnInit {
-  
+
+  @Input() public id: string;
+  @Output() enviaEndereco = new EventEmitter<Endereco>();
+
   public endereco: Endereco = new Endereco;
   public cep: string = "";
+  public numero: string = "";
+  public completoLocal: string = "";
 
-  constructor(private UsuarioService: UsuarioService) { }
+  constructor(
+    private UsuarioService: UsuarioService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -22,8 +29,27 @@ export class EnderecoFormComponent implements OnInit {
       res => {
         this.endereco = res;
         console.log(res)
+        this.enviaEndereco.emit(res);
       },
-      err => console.log(err)
+      err => {
+        console.log(err)
+        alert("Endereço não encontrado")
+      }
     )
   }
+
+  addEndereco() {
+    this.UsuarioService.addEndereco(this.endereco, this.id).subscribe(
+      res => {
+        alert("Adicionado!");
+        this.endereco = new Endereco;
+        this.cep = "";
+        console.log(res);
+      },
+      err => {
+        console.log(err)
+      }
+    )
+  }
+
 }
