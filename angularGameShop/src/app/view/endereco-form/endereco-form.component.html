@@ -1,32 +1,41 @@
-<p>endereco-form works!</p>
-
+<h4>Endereços:</h4>
 
 <div class="form-inline my-2 my-lg">
-    <input class="form-control mr-sm-lg" type="text" name="cep" [(ngModel)]="cep" placeholder="Buscar CEP">
-    <button class="btn btn-outline-primary my-2 my-sm-0" type="button" (click)="buscaCEP()"> Ok </button>
+    <input class="form-control mr-sm-2" type="text" name="cep" [(ngModel)]="cep" placeholder="Busca CEP">
+    <button class="btn btn-outline-primary my-2 my-sm-0 mr-2" type="button" (click)="buscaCEP()">Busca</button>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="addEndereco()">Adiciona</button>
 </div>
 
 <div class="form-group">
     <label for="">Logradouro</label>
-    <input class="form-control" type="text" name="logradouro" [(ngModel)]="endereco.logradouro">
+    <input type="text" name="cep" [(ngModel)]="endereco.logradouro" class="form-control">
 </div>
 
 <div class="form-group">
-    <label for="">Logradouro</label>
-    <input class="form-control" type="text" name="logradouro" [(ngModel)]="endereco.logradouro">
+    <label for="">Numero</label>
+    <input type="text" name="cep" [(ngModel)]="endereco.numero" class="form-control">
 </div>
+
+<div class="form-group">
+    <label for="">Complemento</label>
+    <input type="text" name="cep" [(ngModel)]="endereco.complementos" class="form-control">
+</div>
+
 
 <div class="form-group">
     <label for="">Bairro</label>
-    <input class="form-control" type="text" name="bairro" [(ngModel)]="endereco.bairro">
+    <input type="text" name="cep" [(ngModel)]="endereco.bairro" class="form-control">
 </div>
 
 <div class="form-group">
     <label for="">Cidade</label>
-    <input class="form-control" type="text" name="localidade" [(ngModel)]="endereco.localidade">
+    <input type="text" name="cep" [(ngModel)]="endereco.localidade" class="form-control">
 </div>
 
 <div class="form-group">
     <label for="">UF</label>
-    <input class="form-control" type="text" name="uf" [(ngModel)]="endereco.uf">
+    <input type="text" name="cep" [(ngModel)]="endereco.uf" class="form-control">
 </div>
+
+
+{{id}}

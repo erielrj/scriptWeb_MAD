@@ -39,7 +39,7 @@ export class EnderecoFormComponent implements OnInit {
   }
 
   addEndereco() {
-    this.UsuarioService.addEndereco(this.endereco, this.id).subscribe(
+    this.UsuarioService.addEndereco(this.endereco, this.id).then(
       res => {
         alert("Adicionado!");
         this.endereco = new Endereco;

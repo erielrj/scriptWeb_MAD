@@ -10,11 +10,11 @@ import { Produto } from '../model/produto';
 export class ProdutoService {
 
   constructor(
-    private http: HttpClient,
+    // private http: HttpClient,
     private firedb: AngularFirestore
   ) { }
 
-  private localURL = environment.apiDados;
+  // private localURL = environment.apiDados;
   private colletionProduct = "produto";
 
   addProduct(produto: Produto) {
@@ -37,6 +37,7 @@ export class ProdutoService {
 
 
   getProduct(id: string) {
-    return this.http.get<Produto>(this.localURL + this.colletionProduct + "/" + id)
+    // return this.http.get<Produto>(this.localURL + this.colletionProduct + "/" + id)
+    return this.firedb.collection(this.colletionProduct).doc<Produto>(id).valueChanges()
   }
 }
