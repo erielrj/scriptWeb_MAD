@@ -12,7 +12,8 @@
 - ##### exercicos/selecao
 
 ### Atividade 2 - Tabuada:
-- ##### exercico/angularJS
+- ##### exercicios/angularJS/02-atividade/tabuada/angularJS
+- ##### exercicios/angularJS/02-atividade/tabuada/javascript-puro
 
 ### Atividade 3 - Tamagoshi:
 - ##### Não realizada.
